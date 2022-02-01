@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import './styles/App.css'
 import Ideas from './components/Ideas'
+import './styles/App.css'
 
 class App extends Component {
   constructor() {
@@ -16,11 +16,9 @@ class App extends Component {
 
   render() {
     return (
-      <main>
-        <h1 className="App">IdeaBox</h1>
-        <Ideas name="Travis" />
-        <Ideas name="Butts" />
-        <Ideas name="Mr. Face" age={21}/>
+      <main className="App">
+        <h1>IdeaBox</h1>
+        <Ideas ideas={this.state.ideas}/>
       </main>
     )
   }

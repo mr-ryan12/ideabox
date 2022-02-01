@@ -1,10 +1,23 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Card from './Card'
 import '../styles/Ideas.css'
 
-const Ideas = ({ name, age }) => {
-  console.log(typeof age)
+const Ideas = props => {
+  const allIdeas = props.ideas.map(idea => {
+    return (
+      <Card 
+        key={idea.id}
+        id={idea.id}
+        title={idea.title}
+        description={idea.description}
+      />
+    )
+  })
+
   return (
-    <h1>Hello, {name}! You are {age ? age : 'salty'}!</h1>
+    <div className="ideas-container">
+      {allIdeas}
+    </div>
   )
 }
 
