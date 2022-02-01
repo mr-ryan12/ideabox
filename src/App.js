@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './App.css'
+import './styles/App.css'
 import Ideas from './components/Ideas'
 
 class App extends Component {
@@ -18,7 +18,9 @@ class App extends Component {
     return (
       <main>
         <h1 className="App">IdeaBox</h1>
-        <Ideas />
+        <Ideas name="Travis" />
+        <Ideas name="Butts" />
+        <Ideas name="Mr. Face" age={21}/>
       </main>
     )
   }

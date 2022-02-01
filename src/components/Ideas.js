@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import '../Ideas.css'
+import '../styles/Ideas.css'
 
-const Ideas = props => {
+const Ideas = ({ name, age }) => {
+  console.log(typeof age)
   return (
-    <h2>Ideas go here!</h2>
+    <h1>Hello, {name}! You are {age ? age : 'salty'}!</h1>
   )
 }
 
