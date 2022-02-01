@@ -11,7 +11,10 @@ class Form extends Component {
   }
 
   handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value })
+    const { name, value } = event.target
+    this.setState({
+      [name]: value
+    })
   }
 
   addNewIdea = event => {
@@ -20,6 +23,7 @@ class Form extends Component {
       id: Date.now(),
       title: this.state.title,
       description: this.state.description
+      // or ...this.state (spreads in the 'title' and 'description' properties)
     }
     this.props.addIdea(newIdea)
     this.clearInputs()

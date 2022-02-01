@@ -10,6 +10,7 @@ const Ideas = props => {
         id={idea.id}
         title={idea.title}
         description={idea.description}
+        deleteIdea={props.deleteIdea}
       />
     )
   })

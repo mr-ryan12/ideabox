@@ -17,14 +17,22 @@ class App extends Component {
     })
   }
 
+  deleteIdea = id => {
+    const filteredIdeas = this.state.ideas.filter(idea => idea.id !== id)
+
+    this.setState({
+      ideas: filteredIdeas
+    })
+  }
+
   render() {
     return (
       <main className="App">
         <h1>IdeaBox</h1>
         {/* {!this.state.ideas.length && <h2>No ideas yet! Please add some!</h2>} */}
-        {!this.state.ideas.length ? <h2>No ideas yet! Please add some!</h2> : null}
         <Form addIdea={this.addIdea}/>
-        <Ideas ideas={this.state.ideas}/>
+        <Ideas ideas={this.state.ideas} deleteIdea={this.deleteIdea}/>
+        {!this.state.ideas.length ? <h2>No ideas yet! Please add some!</h2> : null}
       </main>
     )
   }
