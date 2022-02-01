@@ -1,11 +1,11 @@
 import React from 'react'
 import '../styles/Card.css'
 
-const Card = props => {
+const Card = ( { title, description, id } ) => {
   return (
     <div className="card">
-      <h1>{props.title}</h1>
-      <p>{props.description}</p>
+      <h1>{title}</h1>
+      <p>{description}</p>
       <button>🗑</button>
     </div>
   )

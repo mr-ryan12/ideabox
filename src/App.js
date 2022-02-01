@@ -1,23 +1,29 @@
 import React, { Component } from 'react'
 import Ideas from './components/Ideas'
+import Form from './components/Form'
 import './styles/App.css'
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      ideas: [
-        { id: 1, title: 'Prank Travis', description: 'Stick googly eyes on all his stuff' },
-        { id: 2, title: 'Make a secret password app', description: 'So you and your rideshare driver can both know neither one of you is lying' },
-        { id: 3, title: 'Learn a martial art', description: 'To exact vengeance upon my enemies' },
-      ]
+      ideas: []
     }
+  }
+
+  addIdea = idea => {
+    this.setState({
+      ideas: [...this.state.ideas, idea]
+    })
   }
 
   render() {
     return (
       <main className="App">
         <h1>IdeaBox</h1>
+        {/* {!this.state.ideas.length && <h2>No ideas yet! Please add some!</h2>} */}
+        {!this.state.ideas.length ? <h2>No ideas yet! Please add some!</h2> : null}
+        <Form addIdea={this.addIdea}/>
         <Ideas ideas={this.state.ideas}/>
       </main>
     )
